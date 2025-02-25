@@ -13,8 +13,11 @@ app.use(express.json());
 app.use(cors());
 
 // database Connection with mongodb
-mongoose.connect("mongodb+srv://Yashodha:23072@cluster0.hlwt8dd.mongodb.net/e-commerce?retryWrites=true&w=majority&appName=Cluster0");
-
+mongoose.connect(process.env.MONGO_URI || "mongodb+srv://Yashodha:23072@cluster0.hlwt8dd.mongodb.net/e-commerce?retryWrites=true&w=majority&appName=Cluster0", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  
 //Api creation
 
 app.get("/",(req,res)=>{
