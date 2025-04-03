@@ -12,7 +12,7 @@ pipeline {
         stage('Deploy with Docker Compose') {
             steps {
                 // Use bat for Windows command execution
-                bat 'docker-compose up -d'
+                 sh 'docker-compose up -d'
                 
                 // If you need to specify the file path:
                 // bat 'docker-compose -f path/to/docker-compose.yml up -d'
