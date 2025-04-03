@@ -10,13 +10,16 @@ pipeline {
         }
         
         stage('Deploy with Docker Compose') {
-            steps {
-                // Use bat for Windows command execution
-                 sh 'docker-compose up -d'
-                
-                // If you need to specify the file path:
-                // bat 'docker-compose -f path/to/docker-compose.yml up -d'
+    steps {
+        script {
+            def result = sh(script: 'docker-compose up -d', returnStatus: true)
+            if (result != 0) {
+                error("Docker Compose failed with exit code ${result}")
             }
+        }
+    }
+}
+
         }
     }
 
