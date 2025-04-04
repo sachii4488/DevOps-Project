@@ -1,5 +1,5 @@
 import React from 'react'
-import Yash from '../Components/Assests/yash.jpeg'
+import Yash from '../Components/Assests/Us.jpeg'
 import './CSS/About.css'
 import lnkdn from '../Components/Assests/lnkdn.png'
 import x from '../Components/Assests/x.png'
